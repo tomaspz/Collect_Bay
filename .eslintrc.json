@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "env": {
       "browser": true,
       "commonjs": true,
@@ -10,6 +11,23 @@
       "no-extra-semi":"error",
       "no-func-assign": "error",
       "no-irregular-whitespace":"error",
+=======
+    "parserOptions": {
+      "ecmaVersion": 2017
+    },
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "node": true,
+      "es6": true
+    },
+    "rules": {
+      "no-duplicate-case": "error",
+      "no-empty": "error",
+      "no-extra-semi": "error",
+      "no-func-assign": "error",
+      "no-irregular-whitespace": "error",
+>>>>>>> origin/mike-develop
       "no-unreachable": "error",
       "curly": "error",
       "dot-notation": "error",
@@ -25,6 +43,7 @@
       "no-redeclare": "error",
       "camelcase": "error",
       "brace-style": "error",
+<<<<<<< HEAD
       "indent": [
           "error",
           2
@@ -39,3 +58,12 @@
       ]
   }
 }
+=======
+      "indent": ["error", 2],
+      "linebreak-style": ["error", "unix"],
+      "quotes": ["error", "double"],
+      "semi": ["error", "always"]
+    }
+  }
+  
+>>>>>>> origin/mike-develop
