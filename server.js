@@ -19,9 +19,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-const collectionRoutes = require("./controllers/userCollection.js");
+// const collectionRoutes = require("./controllers/userCollection.js");
 
-app.use(collectionRoutes);
+// app.use(collectionRoutes);
 
 app.get("/", function (req, res) {
   res.render("index");
