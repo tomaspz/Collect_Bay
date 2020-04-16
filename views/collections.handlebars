@@ -23,32 +23,22 @@
       </div>
     </div>
     <div class="ui raised very padded text container segment">
-<table class="ui striped table">
+<table class="ui blue inverted striped table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Status</th>
-      <th>Notes</th>
+      <th scope="col">Collection type</th>
+      <th scope="col">Number of items in each collection</th>
+      <th scope="col">ID</th>
     </tr>
   </thead>
-  <tbody>
-    <tr class="top aligned">
-      <td>John</td>
-      <td>Approved</td>
-      <td class="top aligned">
-        Notes<br>
-        1<br>
-        2<br>
-      </td>
-    </tr>
+  <tbody>    
+
+    {{#each collections}}
     <tr>
-      <td>Jamie</td>
-      <td class="bottom aligned">Approved</td>
-      <td>
-        Notes<br>
-        1<br>
-        2<br>
-      </td>
+      <td scope="row">{{collectionType}}</td>
+      <td>{{collectionCount}}</td>
+      <td>{{id}}</td>
     </tr>
+    {{/each}}
   </tbody>
 </table>
