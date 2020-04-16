@@ -1,14 +1,14 @@
 module.exports = function (sequelize, DataTypes){
-    const User = sequelize. define("User", {
-        username: DataTypes.STRING,
-    });
+  const User = sequelize. define("User", {
+    username: DataTypes.STRING,
+  });
 
-    User.associate = function(models){
-        User.belongsToMany(models.Collection, {
-            through: "UserCollections",
-            foreignKey: "userId",
-        });
-    };
-    return User
+  User.associate = function(models){
+    User.belongsToMany(models.Collection, {
+      through: "UserCollections",
+      foreignKey: "userId",
+    });
+  };
+  return User;
 };
 
