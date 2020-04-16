@@ -1,11 +1,54 @@
-{{!-- <h1>Here is your collections</h1>
 
-{{#each collections}}
-<h3>Name: {{name}}</h3>
-<ul>
-    <li>ID: {{id}}</li>
-    <li>Category: {{category}}</li>
-    <li>Item Number: {{itemNum}}</li>
-    <li>Set Last Updated: {{updatedAt}}</li>
-</ul>
-{{/each}} --}}
+<div class="ui blue inverted massive menu">
+      <a class="item">
+        CollectBay
+      </a>
+
+      <div class="right menu">
+        <a class="item" href="/collect">
+          Collect
+        </a>
+        <a class="item" href="/cues">
+          Cues
+        </a>
+        <a class="item" href="/connect">
+          Connect
+        </a>
+        <div class="item">
+          <div class="ui icon input">
+            <input type="text" placeholder="Search..." />
+            <i class="search link icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui raised very padded text container segment">
+<table class="ui striped table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="top aligned">
+      <td>John</td>
+      <td>Approved</td>
+      <td class="top aligned">
+        Notes<br>
+        1<br>
+        2<br>
+      </td>
+    </tr>
+    <tr>
+      <td>Jamie</td>
+      <td class="bottom aligned">Approved</td>
+      <td>
+        Notes<br>
+        1<br>
+        2<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
