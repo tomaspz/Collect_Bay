@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "password",
+=======
+    "password": "guardoinfo",
+>>>>>>> 9693c74fce8030576061f3d1f05d990c1a51d481
     "database": "collection_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
