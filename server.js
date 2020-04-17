@@ -1,5 +1,5 @@
 const express = require("express");
-
+const Handlebars = require("handlebars");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
@@ -14,8 +14,13 @@ app.use(express.json());
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+
+app.engine("handlebars", exphbs({ 
+  defaultLayout: "main",
+  handlebars: allowInsecurePrototypeAccess(Handlebars)
+ }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.

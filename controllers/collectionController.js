@@ -41,9 +41,9 @@ router.get("/api/collections/:id", function (req, res) {
     },
     include: [{ model: db.User }],
   })
-    .then((Collection) => {
-      console.log(Collection);
-      res.json(Collection);
+    .then((collections) => {
+      console.log(collections);
+      res.json(collections);
     })
     .catch((err) => {
       console.log(err);
@@ -58,7 +58,9 @@ router.post("/api/collections", function (req, res) {
   const newCollection = {
     name: req.body.name.trim(),
     category: req.body.category.trim(),
-    itemNum: req.body.itemNum.trim()
+    itemNum: req.body.itemNum,
+    createdAt: req.body.createdAt.trim(),
+    updatedAt: req.body.updatedAt.trim(),
   };
   db.Collection.create(newCollection)
     .then((newCollection) => {
