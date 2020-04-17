@@ -1,5 +1,11 @@
 module.exports = function (sequelize, DataTypes){
   const Toy = sequelize.define("Toy", {
+    category: {
+      type: DataTypes.STRING,
+      validate: {
+        equals: "Toys"
+      }
+    },
     manufacturer: {
       type: DataTypes.STRING,
       allowNull: false

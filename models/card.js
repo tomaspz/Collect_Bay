@@ -1,5 +1,11 @@
 module.exports = function (sequelize, DataTypes){
   const Card = sequelize.define("Card", {
+    category: {
+      type: DataTypes.STRING,
+      validate: {
+        equals: "Cards"
+      }
+    },
     manufacturer: {
       type: DataTypes.STRING,
       allowNull: false

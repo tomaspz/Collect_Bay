@@ -9,8 +9,15 @@ module.exports = function (sequelize, DataTypes){
       foreignKey: "userId",
     });
 
-  // user.belongsTo
   };
+
+  // User.associate = function(models){
+  //   User.hasMany(models.Collection, {
+  //     through: "UserCollections",
+  //     foreignKey: "userId",
+  //   });
+
+  // };
   return User;
 };
 

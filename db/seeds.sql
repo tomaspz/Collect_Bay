@@ -5,33 +5,33 @@ VALUES ("Amazing Spider-Man", "Comics", 300, now(), now());
 
 select * from collections;
 
-INSERT INTO Cards (manufacturer, player, year, quality, createdAt, updatedAt)
-VALUES ("Topps", "Barry Bonds", 1987, "Fair", now(), now());
+INSERT INTO cards (category, manufacturer, player, year, quality, createdAt, updatedAt)
+VALUES ("Cards", "Topps", "Barry Bonds", 1987, "Fair", now(), now());
 
-select * from Cards;
+select * from cards;
 
-INSERT INTO Comics (publisher, title, issue, quality, createdAt, updatedAt)
-VALUES ("Marvel", "Amazing Fantasy", 15, "Mint", now(), now());
+INSERT INTO Comics (category, publisher, title, issue, quality, createdAt, updatedAt)
+VALUES ("Comics","Marvel", "Amazing Fantasy", 15, "Mint", now(), now());
 
-select * from Comics;
+select * from comics;
 
-INSERT INTO Records (artist, album, quality, createdAt, updatedAt)
-VALUES ("Prince", "Purple Rain", "Mint", now(), now());
+INSERT INTO Records (category, artist, album, quality, createdAt, updatedAt)
+VALUES ("Records","Prince", "Purple Rain", "Mint", now(), now());
 
-select * from Records;
+select * from records;
 
-INSERT INTO Stamps (origincountry, class, postmark, quality, createdAt, updatedAt)
-VALUES ("United States", "Commerative", TRUE, "Fair", now(), now());
+INSERT INTO stamps (category, origincountry, class, postmark, quality, createdAt, updatedAt)
+VALUES ("Stamps", "United States", "Commerative", TRUE, "Fair", now(), now());
 
-select * from Stamps;
+select * from stamps;
 
-INSERT INTO Toys (manufacturer, make, model, quality, createdAt, updatedAt)
-VALUES ("Mattel", "Barbie", "Christmas Edition", "Mint", now(), now());
+INSERT INTO toys (category, manufacturer, make, model, quality, createdAt, updatedAt)
+VALUES ("Toys", "Mattel", "Barbie", "Christmas Edition", "Mint", now(), now());
 
-select * from Toys;
+select * from toys;
 
-INSERT INTO Wines (vineyard, style, variety, vintage, winegrade, createdAt, updatedAt)
-VALUES ("Mondavi", "Red", "Merlot", 1985, 90, now(), now());
+INSERT INTO wines (category, vineyard, style, variety, vintage, winegrade, createdAt, updatedAt)
+VALUES ("Wines", "Mondavi", "Red", "Merlot", 1985, 90, now(), now());
 
-select * from Wines;
+select * from wines;
  
