@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes){
-  const Card = sequelize. define("Comic", {
+  const Card = sequelize.define("Comic", {
     manufacturer: {
       type: DataTypes.STRING,
       allowNull: false
@@ -19,4 +19,6 @@ module.exports = function (sequelize, DataTypes){
   });
   return Card;
 };
+
+
 

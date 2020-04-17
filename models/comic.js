@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes){
-  const Comic = sequelize. define("Comic", {
+  const Comic = sequelize.define("Comic", {
     publisher: {
       type: DataTypes.STRING,
       allowNull: false

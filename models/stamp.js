@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes){
-  const Stamp = sequelize. define("Stamp", {
+  const Stamp = sequelize.define("Stamp", {
     origincountry: {
       type: DataTypes.STRING,
       allowNull: false

@@ -42,4 +42,12 @@ db.stamp = require('.model/stamp.js')(sequelize,Sequelize);
 db.toy = require('.model/toy.js')(sequelize,Sequelize);
 db.wine = require('.model/wine.js')(sequelize,Sequelize);
 
+
+db.card.belongsTo(db.user);
+db.comic.belongsTo(db.user);
+db.record.belongsTo(db.user);
+db.stamp.belongsTo(db.user);
+db.toy.belongsTo(db.user);
+db.wine.belongsTo(db.user);
+
 module.exports = db;

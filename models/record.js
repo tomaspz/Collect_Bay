@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes){
-  const Record = sequelize. define("Record", {
+  const Record = sequelize.define("Record", {
     artist: {
       type: DataTypes.STRING,
       allowNull: false
