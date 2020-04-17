@@ -17,7 +17,9 @@ module.exports = function (sequelize, DataTypes){
     quality: {
       type: DataTypes.STRING,
       allowNull: false}
-  });
+  },
+  { timestamps: false }
+  );
 
   Record.associate = models => {
     Record.belongsTo(models.Collection, {

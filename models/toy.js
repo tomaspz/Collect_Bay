@@ -25,7 +25,9 @@ module.exports = function (sequelize, DataTypes){
   Toy.associate = models => {
     Toy.belongsTo(models.Collection, {
       as: "toys"
-    });
+    },
+    { timestamps: false }
+    );
 
   };
   return Toy;

@@ -20,7 +20,10 @@ module.exports = function (sequelize, DataTypes){
     },
     quality: {type: DataTypes.STRING,
       allowNull: false}
-  });
+  },
+  { timestamps: false }
+  );
+
   Stamp.associate = models => {
     Stamp.belongsTo(models.Collection, {
       as: "stamps"

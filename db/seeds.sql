@@ -1,37 +1,37 @@
 USE collection_db;
 
-INSERT INTO collections (name, category, itemNum, createdAt, updatedAt)
-VALUES ("Amazing Spider-Man", "Comics", 300, now(), now());
+INSERT INTO collections (name, category, itemNum)
+VALUES ("Amazing Spider-Man", "Comics", 300);
 
 select * from collections;
 
-INSERT INTO cards (category, manufacturer, player, year, quality, createdAt, updatedAt)
-VALUES ("Cards", "Topps", "Barry Bonds", 1987, "Fair", now(), now());
+INSERT INTO cards (category, manufacturer, player, year, quality)
+VALUES ("Cards", "Topps", "Barry Bonds", 1987, "Fair");
 
 select * from cards;
 
-INSERT INTO Comics (category, publisher, title, issue, quality, createdAt, updatedAt)
-VALUES ("Comics","Marvel", "Amazing Fantasy", 15, "Mint", now(), now());
+INSERT INTO Comics (category, publisher, title, issue, quality)
+VALUES ("Comics","Marvel", "Amazing Fantasy", 15, "Mint");
 
 select * from comics;
 
-INSERT INTO Records (category, artist, album, quality, createdAt, updatedAt)
-VALUES ("Records","Prince", "Purple Rain", "Mint", now(), now());
+INSERT INTO Records (category, artist, album, quality)
+VALUES ("Records","Prince", "Purple Rain", "Mint");
 
 select * from records;
 
-INSERT INTO stamps (category, origincountry, class, postmark, quality, createdAt, updatedAt)
-VALUES ("Stamps", "United States", "Commerative", TRUE, "Fair", now(), now());
+INSERT INTO stamps (category, origincountry, class, postmark, quality)
+VALUES ("Stamps", "United States", "Commerative", TRUE, "Fair");
 
 select * from stamps;
 
-INSERT INTO toys (category, manufacturer, make, model, quality, createdAt, updatedAt)
-VALUES ("Toys", "Mattel", "Barbie", "Christmas Edition", "Mint", now(), now());
+INSERT INTO toys (category, manufacturer, make, model, quality)
+VALUES ("Toys", "Mattel", "Barbie", "Christmas Edition", "Mint");
 
 select * from toys;
 
-INSERT INTO wines (category, vineyard, style, variety, vintage, winegrade, createdAt, updatedAt)
-VALUES ("Wines", "Mondavi", "Red", "Merlot", 1985, 90, now(), now());
+INSERT INTO wines (category, vineyard, style, variety, vintage, winegrade)
+VALUES ("Wines", "Mondavi", "Red", "Merlot", 1985, 90);
 
 select * from wines;
  

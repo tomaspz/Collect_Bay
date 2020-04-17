@@ -22,7 +22,9 @@ module.exports = function (sequelize, DataTypes){
       type: DataTypes.STRING,
       allowNull: false
     }
-  });
+  },
+  { timestamps: false }
+  );
 
   Comic.associate = models => {
     Comic.belongsTo(models.Collection, {
