@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes){
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
-    grade: {type: DataTypes.STRING,
+    quality: {type: DataTypes.STRING,
       allowNull: false}
   });
   return Stamp;

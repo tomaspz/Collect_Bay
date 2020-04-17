@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes){
       type: DataTypes.INTEGER,
       isNumeric: true
     },
-    grade: {
+    quality: {
       type: DataTypes.STRING,
       allowNull: false
     }
