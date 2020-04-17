@@ -100,9 +100,6 @@ router.post("/api/users", function (req, res) {
     .catch((err) => {
       console.log(err);
     });
-  // read the req.body
-  // create the new user
-  // send a message back to the front
 });
 
 module.exports = router;

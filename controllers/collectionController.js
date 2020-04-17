@@ -54,4 +54,23 @@ router.get("/api/collections/:id", function (req, res) {
     });
 });
 
+router.post("/api/collections", function (req, res) {
+  const newCollection = {
+    name: req.body.name.trim(),
+    category: req.body.category.trim(),
+    itemNum: req.body.itemNum.trim()
+  };
+  db.Collection.create(newCollection)
+    .then((newCollection) => {
+      console.log(newCollection);
+      res.json({
+        message: "Successfully created new collection",
+        success: true,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 module.exports = router;
