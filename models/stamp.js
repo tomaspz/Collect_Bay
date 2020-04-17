@@ -4,7 +4,7 @@ module.exports = function (sequelize, DataTypes){
       type: DataTypes.STRING,
       allowNull: false
     },
-    type: {
+    class: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes){
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
-    condition: {type: DataTypes.STRING,
+    grade: {type: DataTypes.STRING,
       allowNull: false}
   });
   return Stamp;

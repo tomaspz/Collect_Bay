@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes){
       foreignKey: "userId",
     });
 
-  user.belongsTo
+  // user.belongsTo
   };
   return User;
 };
