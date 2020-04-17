@@ -1,6 +1,6 @@
 USE collection_db;
 
-INSERT INTO collections (name, category, itemNum, createdAt, updatedAt)
-VALUES ("Amazing Spider-Man", "Comics", 300, 1, now(), now());
+INSERT INTO Collections (name, category, itemNum, createdAt, updatedAt)
+VALUES ("Amazing Spider-Man", "Comics", 300, now(), now());
 
-select * from collections;
+select * from Collections;
