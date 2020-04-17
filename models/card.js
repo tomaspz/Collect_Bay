@@ -21,8 +21,16 @@ module.exports = function (sequelize, DataTypes){
     quality: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+
   });
+
+  Card.associate = models => {
+    Card.belongsTo(models.Collection, {
+      as: "cards"
+    });
+  };
+
   return Card;
 };
 

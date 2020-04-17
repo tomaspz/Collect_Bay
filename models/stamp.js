@@ -21,6 +21,12 @@ module.exports = function (sequelize, DataTypes){
     quality: {type: DataTypes.STRING,
       allowNull: false}
   });
+  Stamp.associate = models => {
+    Stamp.belongsTo(models.Collection, {
+      as: "stamps"
+    });
+  };
+
   return Stamp;
 };
 

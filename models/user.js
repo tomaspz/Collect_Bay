@@ -3,21 +3,19 @@ module.exports = function (sequelize, DataTypes){
     username: DataTypes.STRING,
   });
 
-  User.associate = function(models){
-    User.belongsToMany(models.Collection, {
-      through: "UserCollections",
-      foreignKey: "userId",
-    });
-
-  };
-
   // User.associate = function(models){
-  //   User.hasMany(models.Collection, {
+  //   User.belongsToMany(models.Collection, {
   //     through: "UserCollections",
   //     foreignKey: "userId",
   //   });
 
   // };
+
+  User.associate = models => {
+    User.hasMany(models.Collection, {
+      as: "CollectionId"
+    });
+  };
   return User;
 };
 

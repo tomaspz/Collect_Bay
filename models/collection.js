@@ -5,12 +5,12 @@ module.exports = function (sequelize, DataTypes){
     itemNum: DataTypes.INTEGER,
   });
 
-  Collection.associate = function (models) {
-    Collection.belongsToMany(models.User, {
-      through: "UserCollections",
-      foreignKey: "collectionId",
-    });
-  };
+  // Collection.associate = function (models) {
+  //   Collection.belongsToMany(models.User, {
+  //     through: "UserCollections",
+  //     foreignKey: "collectionId",
+  //   });
+  // };
   return Collection;
 };
 

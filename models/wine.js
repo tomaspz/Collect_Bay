@@ -27,5 +27,11 @@ module.exports = function (sequelize, DataTypes){
       isNumeric: true
     }
   });
+
+  Wine.associate = models => {
+    Wine.belongsTo(models.Collection, {
+      as: "wines"
+    });
+  };
   return Wine;
 };

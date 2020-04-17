@@ -23,6 +23,12 @@ module.exports = function (sequelize, DataTypes){
       allowNull: false
     }
   });
+
+  Comic.associate = models => {
+    Comic.belongsTo(models.Collection, {
+      as: "comics"
+    });
+  };
   return Comic;
 };
 
