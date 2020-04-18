@@ -1,0 +1,36 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+
+<h1>eBay Search Results</h1>
+
+<h4>Search eBay for your favorite collections</h4>
+
+<div class="ui input">
+    <input id="search-term" type="text" placeholder="Search Term ...">
+    <button id="search-ebay" class="ui right labeled icon button">
+        <i class="search icon"></i>Search</button>
+</div>
+
+{{!-- <div class="ui fluid category search">
+    <div class="ui icon input">
+        <input id="search-ebay" class="prompt" type="text" placeholder="Search for Collections on eBay ...">
+        <i class="search icon"></i>
+    </div>
+    <div id="results" class="response"></div>
+</div> --}}
+
+
+<script>
+    $(document).ready(function(){
+        $("#search-ebay").on("click", function () {
+            let searchTerm = $("#search-term").val().trim();
+            // console.log(searchTerm);
+            let queryEbay = `https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=EBAY_APP_ID&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=${searchTerm}&paginationInput.entriesPerPage=8`;
+
+            $.get({ queryEbay, function(response){
+                console.log(response);
+            }
+            });
+        });
+
+    });
+</script>

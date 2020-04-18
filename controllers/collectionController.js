@@ -54,6 +54,10 @@ router.get("/api/collections/:id", function (req, res) {
     });
 });
 
+router.get("/ebay", function(req,res){
+  res.render("ebay");
+});
+
 router.post("/api/collections", function (req, res) {
   const newCollection = {
     name: req.body.name.trim(),
