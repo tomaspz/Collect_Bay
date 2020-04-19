@@ -2,7 +2,7 @@ module.exports = function (sequelize, DataTypes) {
   const EbayCollections = sequelize.define(
     "EbayCollections",
     {
-      itemid: DataTypes.STRING,
+      // itemid: DataTypes.STRING,
       title: DataTypes.TEXT,
       category: DataTypes.TEXT,
       location: DataTypes.STRING,

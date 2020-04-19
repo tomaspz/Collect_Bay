@@ -18,8 +18,8 @@ $(document).ready(function () {
         };
         $.post("/api/ebaycollections", newCollection).then(res => {
             console.log("This is the response: " + res);
-        }).catch((err)=>{
-            if(err) throw err;
+        }).catch((err) => {
+            if (err) throw err;
             console.log("There was an error in POST /api/ebaycollections")
         })
     })
