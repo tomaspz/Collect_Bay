@@ -1,17 +1,21 @@
-module.exports = function (sequelize, DataTypes){
-    const EbayCollections = sequelize. define(
-      "EbayCollections",
-      {
-        itemId: DataTypes.INTEGER,
-        title: DataTypes.STRING,
-        category: DataTypes.STRING,
-        location: DataTypes.STRING,
-        price: DataTypes.INTEGER,
-        condition: DataTypes.STRING,
-        url: DataTypes.STRING
+module.exports = function (sequelize, DataTypes) {
+  const EbayCollections = sequelize.define(
+    "EbayCollections",
+    {
+      itemid: DataTypes.STRING,
+      title: DataTypes.TEXT,
+      category: DataTypes.TEXT,
+      location: DataTypes.STRING,
+      price: {
+        type: DataTypes.STRING,
+        notEmpty: false,
+        defaultValue: null
       },
-      { timestamps: false }
-    );
-  
-    return EbayCollections;
-  };
+      condition: DataTypes.STRING,
+      url: DataTypes.STRING
+    },
+    { timestamps: false }
+  );
+
+  return EbayCollections;
+};
