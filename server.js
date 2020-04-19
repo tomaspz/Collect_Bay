@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const Handlebars = require("handlebars");
 const PORT = process.env.PORT || 3000;
 
@@ -26,8 +27,10 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 const collectionRoutes = require("./controllers/collectionController.js");
 const userRoutes = require("./controllers/userController.js");
+const ebayRoutes = require("./controllers/ebayController.js");
 app.use(collectionRoutes);
 app.use(userRoutes);
+app.use(ebayRoutes);
 
 app.get("/", function (req, res) {
   res.render("index");

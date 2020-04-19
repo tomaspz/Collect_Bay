@@ -1,4 +1,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/ebay.js"></script>
 
 <h1>eBay Search Results</h1>
 
@@ -9,28 +10,35 @@
     <button id="search-ebay" class="ui right labeled icon button">
         <i class="search icon"></i>Search</button>
 </div>
-
-{{!-- <div class="ui fluid category search">
-    <div class="ui icon input">
-        <input id="search-ebay" class="prompt" type="text" placeholder="Search for Collections on eBay ...">
-        <i class="search icon"></i>
+<hr>
+<h1>This are your results: </h1>
+<pre>{{ebayCollections}}</pre>
+<div class="ui four column grid">
+    {{#each ebayCollections}}
+  <div class="column">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="{{galleryURL}}">
+      </div>
+      <div class="content">
+        <a class="header">{{title}}e</a>
+        <hr>
+        <p>Item ID: {{itemId}}</p>
+        <hr>
+        <p>Category: {{primaryCategory.categoryName}}<p>
+        <hr>
+        <p>Location: {{location}}</h4>
+        <hr>
+        <p>Price: {{sellingStatus.currentPrice}}</p>
+        <hr>
+        <p>Condition: {{condition.conditionDisplayName}}</p>
+        <hr>
+        <button class="btn btn-dark add-to-collection" data-title="{{title}}" data-category="{{primaryCategory.categoryName}}"
+                        data-location="{{location}}" data-price="{{sellingStatus.currentPrice}}" data-condition="{{condition.conditionDisplayName}}" data-image-url={{galleryURL}}>Add to Your Collection</button>
+      </div>
     </div>
-    <div id="results" class="response"></div>
-</div> --}}
+  </div>
+  {{/each}}
+</div>
 
-
-<script>
-    $(document).ready(function(){
-        $("#search-ebay").on("click", function () {
-            let searchTerm = $("#search-term").val().trim();
-            // console.log(searchTerm);
-            let queryEbay = `https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=EBAY_APP_ID&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=${searchTerm}&paginationInput.entriesPerPage=8`;
-
-            $.get({ queryEbay, function(response){
-                console.log(response);
-            }
-            });
-        });
-
-    });
-</script>
+<!--<script type="text/javascript" src="assets/js/ebay.js"></script>-->
