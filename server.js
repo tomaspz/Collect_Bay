@@ -3,6 +3,7 @@ require("dotenv").config();
 const Handlebars = require("handlebars");
 const PORT = process.env.PORT || 3000;
 
+
 const app = express();
 
 const db = require("./models");
@@ -18,9 +19,15 @@ var exphbs = require("express-handlebars");
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
 
+
 app.engine("handlebars", exphbs({ 
   defaultLayout: "main",
-  handlebars: allowInsecurePrototypeAccess(Handlebars)
+  handlebars: allowInsecurePrototypeAccess(Handlebars),
+  helpers: {
+    json: function(context) {
+      return JSON.stringify(context);
+    }
+  }
  }));
 app.set("view engine", "handlebars");
 

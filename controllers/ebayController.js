@@ -13,6 +13,7 @@ router.get("/ebay/:searchTerm", function (req, res) {
     .then(response => {
       let ebayCollectionsArray = response.data.findItemsByKeywordsResponse[0].searchResult[0].item;
       // res.json(ebayCollectionsArray);
+      // res.json(ebayCollectionsArray[0]);
       res.render("ebay", {
         ebayCollections: ebayCollectionsArray
       });
@@ -27,7 +28,10 @@ router.get("/ebay", function (req, res) {
 });
 
 router.post("/api/ebaycollections", function (req, res) {
-  let newCollection = req.body;
+  const {itemId, title, category, location, price, ebayurl, image} = req.body;
+  const newCollection = {
+    itemId, title, category, location, price, ebayurl, image
+  };
   console.log(newCollection);
   db.EbayCollections.create(newCollection)
     .then((res) => {

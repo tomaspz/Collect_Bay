@@ -51,19 +51,19 @@
                     <hr>
                     <p>Item ID: {{itemId}}</p>
                     <hr>
-                    <p>Category: {{primaryCategory.categoryName}}<p>
+                    <p>Category: {{primaryCategory.[0].categoryName}}<p>
                     <hr>
                     <p>Location: {{location}}</h4>
                     <hr>
-                    <p>Price: {{sellingStatus.currentPrice.__value__}}</p>
+                    <p>Price: {{sellingStatus.[0].currentPrice.[0].__value__}}</p>
                     <hr>
-                    <p>Condition: {{condition.conditionDisplayName}}</p>
+                    <p>Ebay Link: <a href="{{viewItemURL}}">{{viewItemURL}}</a></p>
                     <hr>
                     <button class="ui secondary button add-to-collection" data-itemid="{{itemId}}" data-title="{{title}}"
-                        data-category="{{primaryCategory.categoryName}}" data-location="{{location}}"
-                        data-price="{{sellingStatus.currentPrice.__value__}}"
-                        data-condition="{{condition.conditionDisplayName}}"
-                        data-url={{galleryURL}}>Add Collection</button>
+                        data-category="{{primaryCategory.[0].categoryName}}" data-location="{{location}}"
+                        data-price="{{sellingStatus.[0].currentPrice.[0].__value__}}"
+                        data-ebayurl="{{viewItemURL}}"
+                        data-image={{galleryURL}}>Add Collection</button>
                 </div>
             </div>
         </div>
