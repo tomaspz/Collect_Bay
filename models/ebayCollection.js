@@ -11,8 +11,8 @@ module.exports = function (sequelize, DataTypes) {
         notEmpty: false,
         defaultValue: null
       },
-      condition: DataTypes.STRING,
-      url: DataTypes.STRING
+      ebayurl: DataTypes.STRING,
+      image: DataTypes.STRING
     },
     { timestamps: false }
   );

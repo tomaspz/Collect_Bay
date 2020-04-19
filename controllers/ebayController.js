@@ -28,20 +28,32 @@ router.get("/ebay", function (req, res) {
 });
 
 router.post("/api/ebaycollections", function (req, res) {
-  const {itemId, title, category, location, price, ebayurl, image} = req.body;
+
   const newCollection = {
-    itemId, title, category, location, price, ebayurl, image
+    itemid: req.body.itemid,
+    title: req.body.title.trim(), 
+    category: req.body.category.trim(), 
+    location: req.body.location.trim(), 
+    price: req.body.price, 
+    ebayurl: req.body.ebayurl.trim(), 
+    image: req.body.image.trim()
   };
-  console.log(newCollection);
+
   db.EbayCollections.create(newCollection)
     .then((res) => {
-      res.json({
-        message: "Successfully created new collection",
-        success: true,
-      });
+      console.log(res);
+      // res.json({
+      //   message: "Successfully created new collection",
+      //   success: true,
+      // });
     })
     .catch((err) => {
       console.log(err);
+      res.status(500);
+      res.json({
+        success: false,
+        message: "An error occurred adding your lego to our database",
+      });
     });
 });
 

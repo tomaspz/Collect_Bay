@@ -13,8 +13,8 @@ $(document).ready(function () {
             category: $(this).data("category"),
             location: $(this).data("location"),
             price: $(this).data("price"),
-            condition: $(this).data("condition"),
-            url: $(this).data("url")
+            ebayurl: $(this).data("ebayurl"),
+            image: $(this).data("image")
         };
         $.post("/api/ebaycollections", newCollection).then(res => {
             console.log("This is the response: " + res);
