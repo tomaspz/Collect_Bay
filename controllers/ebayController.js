@@ -7,7 +7,7 @@ const db = require("../models");
 
 router.get("/ebay/:searchTerm", function (req, res) {
 
-  const queryEbay = `https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=${process.env.EBAY_APP_ID}&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=${req.params.searchTerm}&paginationInput.entriesPerPage=8`;
+  const queryEbay = `https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=${process.env.EBAY_APP_ID}&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=${req.params.searchTerm}&paginationInput.entriesPerPage=12`;
 
   axios.get(queryEbay)
     .then(response => {

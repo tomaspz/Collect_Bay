@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
       category: DataTypes.TEXT,
       location: DataTypes.STRING,
       price: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.FLOAT(9,2).UNSIGNED,
         notEmpty: false,
         defaultValue: null
       },
