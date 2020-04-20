@@ -17,7 +17,11 @@ router.get("/connect", function (req, res) {
 });
 
 router.get("/dbcollections", function(req,res){
-  res.render("your-collections");
+  db.EbayCollections.findAll().then(collections => {
+    res.render("your-collections", {
+      collections: collections
+    });
+  })
 });
 
 router.get("/ebay/:searchTerm", function (req, res) {
@@ -38,7 +42,7 @@ router.get("/ebay/:searchTerm", function (req, res) {
     })
 })
 
-router.get("/dbcollections", function(req,res){
+router.get("/api/ebaycollections", function(req,res){
   db.EbayCollections.findAll().then(collections => {
     // res.json(collections);
     res.render("your-collections", {
@@ -47,7 +51,7 @@ router.get("/dbcollections", function(req,res){
   })
 })
 
-router.post("/api/ebaycollections", function (req, res) {
+router.post("/api/ebaycollections/:itemid", function (req, res) {
 
   const newCollection = {
     itemid: req.body.itemid,
@@ -89,6 +93,7 @@ router.delete("/api/ebaycollections/:id", function(req,res){
         success: true,
         message: `Successfully deleted user: ${req.params.id}`,
       });
+      location.reload();
     } else {
       res.status(500);
       res.json({

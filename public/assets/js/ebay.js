@@ -16,7 +16,7 @@ $(document).ready(function () {
             ebayurl: $(this).data("ebayurl"),
             image: $(this).data("image")
         };
-        $.post("/api/ebaycollections", newCollection).then(res => {
+        $.post("/api/ebaycollections/:itemid", newCollection).then(res => {
             console.log("This is the response: " + res);
             $(this).empty();
             window.location.replace(`/ebay/${searchTerm}`);
