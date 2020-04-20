@@ -16,7 +16,9 @@
         <a class="item" href="/connect">
             <h4 class="ui white inverted header">Connect</h4>
         </a>
-        <a class="item" href="/dbcollections"><h4 class="ui white inverted header">Your Collections</h4></a>
+        <a class="item" href="/dbcollections">
+            <h4 class="ui white inverted header">Your Collections</h4>
+        </a>
         {{!-- <div class="item">
             <div class="ui icon input">
                 <input type="text" placeholder="Search..." />
@@ -53,19 +55,36 @@
                     <p>Item ID: {{itemId}}</p>
                     <hr>
                     <p>Category: {{primaryCategory.[0].categoryName}}<p>
-                    <hr>
-                    <p>Location: {{location}}</h4>
-                    <hr>
-                    <p>Price (USD): ${{sellingStatus.[0].currentPrice.[0].__value__}}</p>
-                    <hr>
-                    <p>Ebay Link: <a href="{{viewItemURL}}">{{viewItemURL}}</a></p>
-                    <hr>
-                    <button class="ui secondary button add-to-collection" data-itemid="{{itemId}}" data-title="{{title}}"
-                        data-category="{{primaryCategory.[0].categoryName}}" data-location="{{location}}"
-                        data-price="{{sellingStatus.[0].currentPrice.[0].__value__}}"
-                        data-ebayurl="{{viewItemURL}}"
-                        data-image={{galleryURL}}>Add Collection</button>
+                            <hr>
+                            <p>Location: {{location}}</h4>
+                                <hr>
+                                <p>Price (USD): ${{sellingStatus.[0].currentPrice.[0].__value__}}</p>
+                                <hr>
+                                <p>Ebay Link: <a href="{{viewItemURL}}">{{viewItemURL}}</a></p>
+                                <hr>
+                                <button class="ui secondary button add-to-collection" data-itemid="{{itemId}}"
+                                    data-title="{{title}}" data-category="{{primaryCategory.[0].categoryName}}"
+                                    data-location="{{location}}"
+                                    data-price="{{sellingStatus.[0].currentPrice.[0].__value__}}"
+                                    data-ebayurl="{{viewItemURL}}" data-image={{galleryURL}}>Add Collection</button>
+                                {{!-- MODAL
+                                <div class="ui message hidden">
+                                    <i class="close icon"></i>
+                                    <div class="header">
+                                        Item successfully added to your collection!.
+                                    </div>
+                                    <p>Click the x to close this message</p>
+                                </div> --}}
                 </div>
+            </div>
+        </div>
+        <!-- MODAL -->
+        <div id="add-modal" class="ui basic modal">
+            <div class="content">
+                <p>Item succesfully added to your collection!.</p>
+            </div>
+            <div class="actions">
+                <div class="ui green ok inverted button" data-value="yes"><i class="checkmark icon"></i>OK</div>
             </div>
         </div>
         {{/each}}

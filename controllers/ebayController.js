@@ -65,7 +65,7 @@ router.post("/api/ebaycollections/:itemid", function (req, res) {
 
   db.EbayCollections.create(newCollection)
     .then((res) => {
-      console.log(res);
+      // console.log(res);
       // res.json({
       //   message: "Successfully created new collection",
       //   success: true,
