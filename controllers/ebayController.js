@@ -27,6 +27,15 @@ router.get("/ebay", function (req, res) {
   res.render("ebay");
 });
 
+router.get("/dbcollections", function(req,res){
+  db.EbayCollections.findAll().then(collections => {
+    // res.json(collections);
+    res.render("your-collections", {
+      collections: collections
+    });
+  })
+})
+
 router.post("/api/ebaycollections", function (req, res) {
 
   const newCollection = {
@@ -57,5 +66,33 @@ router.post("/api/ebaycollections", function (req, res) {
     });
 });
 
+router.delete("/api/ebaycollections/:id", function(req,res){
+
+  db.EbayCollections.destroy({
+    where: {
+      itemid: req.params.id
+    }
+  }).then(destroyedRow => {
+    if (destroyedRow === 1) {
+      res.json({
+        success: true,
+        message: `Successfully deleted user: ${req.params.id}`,
+      });
+    } else {
+      res.status(500);
+      res.json({
+        success: false,
+        message: `A problem occurred deleting user: ${req.params.id}`,
+      });
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500);
+    res.json({
+      success: false,
+    });
+  });
+})
 
 module.exports = router;
