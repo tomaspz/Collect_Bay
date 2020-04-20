@@ -4,6 +4,21 @@ const axios = require('axios');
 
 const db = require("../models");
 
+router.get("/collect", function (req, res) {
+  res.render("collections");
+});
+
+router.get("/ebay", function (req, res) {
+  res.render("ebay");
+});
+
+router.get("/connect", function (req, res) {
+  res.render("connect");
+});
+
+router.get("/dbcollections", function(req,res){
+  res.render("your-collections");
+});
 
 router.get("/ebay/:searchTerm", function (req, res) {
 
@@ -22,10 +37,6 @@ router.get("/ebay/:searchTerm", function (req, res) {
       res.json(err);
     })
 })
-
-router.get("/ebay", function (req, res) {
-  res.render("ebay");
-});
 
 router.get("/dbcollections", function(req,res){
   db.EbayCollections.findAll().then(collections => {
