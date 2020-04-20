@@ -16,7 +16,7 @@ app.use(express.json());
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
 
 
@@ -28,7 +28,7 @@ app.engine("handlebars", exphbs({
       return JSON.stringify(context);
     }
   }
- }));
+}));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
@@ -39,15 +39,15 @@ app.use(collectionRoutes);
 app.use(userRoutes);
 app.use(ebayRoutes);
 
-app.get("/", function (req, res) {
-  res.render("index");
-});
+// app.get("/", function (req, res) {
+//   res.render("index");
+// });
 
-app.get("/api/config", function (req, res) {
-  res.json({
-    success: true,
-  });
-});
+// app.get("/api/config", function (req, res) {
+//   res.json({
+//     success: true,
+//   });
+// });
 
 db.sequelize.sync().then(function () {
   app.listen(PORT, function () {

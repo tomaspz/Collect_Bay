@@ -4,6 +4,10 @@ const axios = require('axios');
 
 const db = require("../models");
 
+router.get("/", function (req, res) {
+  res.render("index");
+});
+
 router.get("/collect", function (req, res) {
   res.render("collections");
 });
