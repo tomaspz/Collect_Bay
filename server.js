@@ -33,10 +33,10 @@ app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
 const collectionRoutes = require("./controllers/collectionController.js");
-const userRoutes = require("./controllers/userController.js");
+//const userRoutes = require("./controllers/userController.js");
 const ebayRoutes = require("./controllers/ebayController.js");
 app.use(collectionRoutes);
-app.use(userRoutes);
+//app.use(userRoutes);
 app.use(ebayRoutes);
 
 // app.get("/", function (req, res) {

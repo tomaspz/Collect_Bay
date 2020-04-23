@@ -4,6 +4,8 @@ const axios = require('axios');
 
 const db = require("../models");
 
+// HTML ROUTES
+
 router.get("/", function (req, res) {
   res.render("index");
 });
@@ -20,13 +22,15 @@ router.get("/connect", function (req, res) {
   res.render("connect");
 });
 
-router.get("/dbcollections", function(req,res){
-  db.EbayCollections.findAll().then(collections => {
-    res.render("your-collections", {
-      collections: collections
-    });
-  })
-});
+// API ROUTES
+
+// router.get("/dbcollections", function (req, res) {
+//   db.EbayCollections.findAll().then(collections => {
+//     res.render("your-collections", {
+//       collections: collections
+//     });
+//   })
+// });
 
 router.get("/ebay/:searchTerm", function (req, res) {
 
@@ -46,7 +50,7 @@ router.get("/ebay/:searchTerm", function (req, res) {
     })
 })
 
-router.get("/api/ebaycollections", function(req,res){
+router.get("/api/ebaycollections", function (req, res) {
   db.EbayCollections.findAll().then(collections => {
     // res.json(collections);
     res.render("your-collections", {
@@ -59,11 +63,11 @@ router.post("/api/ebaycollections/:itemid", function (req, res) {
 
   const newCollection = {
     itemid: req.body.itemid,
-    title: req.body.title.trim(), 
-    category: req.body.category.trim(), 
-    location: req.body.location.trim(), 
-    price: req.body.price, 
-    ebayurl: req.body.ebayurl.trim(), 
+    title: req.body.title.trim(),
+    category: req.body.category.trim(),
+    location: req.body.location.trim(),
+    price: req.body.price,
+    ebayurl: req.body.ebayurl.trim(),
     image: req.body.image.trim()
   };
 
@@ -85,7 +89,7 @@ router.post("/api/ebaycollections/:itemid", function (req, res) {
     });
 });
 
-router.delete("/api/ebaycollections/:id", function(req,res){
+router.delete("/api/ebaycollections/:id", function (req, res) {
 
   db.EbayCollections.destroy({
     where: {
@@ -106,13 +110,13 @@ router.delete("/api/ebaycollections/:id", function(req,res){
       });
     }
   })
-  .catch((err) => {
-    console.log(err);
-    res.status(500);
-    res.json({
-      success: false,
+    .catch((err) => {
+      console.log(err);
+      res.status(500);
+      res.json({
+        success: false,
+      });
     });
-  });
 })
 
 module.exports = router;
